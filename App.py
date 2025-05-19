@@ -12,10 +12,11 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 
-# Load NLTK resources
-# nltk.download('punkt')
-# nltk.download('wordnet')
-# nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')  # For tokenization
+nltk.download('stopwords')  # Optional if you're using stopwords
+nltk.download('wordnet')  # For lemmatization
+nltk.download('averaged_perceptron_tagger')  # For POS tagging
+nltk.download('omw-1.4')  # For lemmatizer's synonyms (optional but recommended)
 
 # Load saved components
 try:
@@ -28,22 +29,6 @@ try:
 except FileNotFoundError as e:
     st.error(e)
     st.stop()
-
-def download_nltk_resources():
-    paths = [
-        'tokenizers/punkt',
-        'corpora/stopwords',
-        'corpora/wordnet',
-        'taggers/averaged_perceptron_tagger',
-        'corpora/omw-1.4'
-    ]
-    for path in paths:
-        try:
-            nltk.data.find(path)
-        except LookupError:
-            nltk.download(os.path.basename(path))
-
-download_nltk_resources()
 
 # Preprocessing
 def preprocess(text):
