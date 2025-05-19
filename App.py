@@ -20,9 +20,14 @@ except LookupError:
     nltk.download('punkt', download_dir=nltk_data_path)
 
 try:
-    nltk.data.find('copora/stopwords')
+    nltk.data.find('corpora/stopwords')
 except LookupError:
     nltk.download('stopwords', download_dir=nltk_data_path)
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet', download_dir=nltk_data_path)
 
 try:
     nltk.data.find('taggers/averaged_perceptron_tagger')
