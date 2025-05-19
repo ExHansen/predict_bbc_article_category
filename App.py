@@ -41,7 +41,7 @@ def download_nltk_resources():
         try:
             nltk.data.find(path)
         except LookupError:
-            nltk.download(path.split('/')[-1])
+            nltk.download(os.path.basename(path))
 
 download_nltk_resources()
 
