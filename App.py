@@ -3,12 +3,14 @@ import joblib
 import numpy as np
 import re
 import nltk
+import os
 from nltk.corpus import stopwords, wordnet
 from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
+
 
 # Load NLTK resources
 # nltk.download('punkt')
@@ -26,6 +28,22 @@ try:
 except FileNotFoundError as e:
     st.error(e)
     st.stop()
+
+def download_nltk_resources():
+    paths = [
+        'tokenizers/punkt',
+        'corpora/stopwords',
+        'corpora/wordnet',
+        'taggers/averaged_perceptron_tagger',
+        'corpora/omw-1.4'
+    ]
+    for path in paths:
+        try:
+            nltk.data.find(path)
+        except LookupError:
+            nltk.download(path.split('/')[-1])
+
+download_nltk_resources()
 
 # Preprocessing
 def preprocess(text):
