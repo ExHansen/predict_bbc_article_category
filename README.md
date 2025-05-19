@@ -19,7 +19,7 @@ This project implements a text classification system that can predict the catego
 
 ## 🚀 Demo
 
-![App Screenshot](screenshot.png)
+![App Screenshot](image.png)
 
 *Add a screenshot of your application here*
 
@@ -30,7 +30,7 @@ This project implements a text classification system that can predict the catego
 - **NLP Processing**: NLTK
 - **Data Visualization**: Matplotlib, Seaborn
 - **Model Serialization**: Joblib
-- **Programming Language**: Python 3.8+
+- **Programming Language**: Python 3.12.6
 
 ## 📋 Requirements
 
@@ -41,27 +41,15 @@ This project implements a text classification system that can predict the catego
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/bbc-news-classifier.git
-   cd bbc-news-classifier
+   git clone https://github.com/exhansen/predict_bbc_article_category.git
    ```
 
-2. **Create a virtual environment** (recommended)
-   ```bash
-   python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Download NLTK data** (if needed)
+3. **Download NLTK data** (if needed)
    ```python
    import nltk
    nltk.download('punkt')
@@ -82,7 +70,7 @@ The application will open in your default web browser at `http://localhost:8501`
 
 ### Using the Classifier
 
-1. **Select an example** from the dropdown or enter custom text
+1. **Input news article** 
 2. **Click "Predict Category"** to classify the article
 3. **View results** including predicted category and confidence scores
 4. **Explore performance** with the confusion matrix visualization
@@ -113,43 +101,14 @@ The system uses a **Stacking Ensemble** approach:
 1. **Base Models**:
    - Multinomial Naive Bayes
    - Random Forest Classifier
-   - (Add other base models if used)
 
-2. **Meta-learner**: Final classifier that combines base model predictions
+2. **Meta-learner**:
+   - LogisticRegression
 
-3. **Feature Engineering**:
+4. **Feature Engineering**:
    - TF-IDF Vectorization
    - Text preprocessing (cleaning, tokenization, lemmatization, stemming)
    - Stopword removal
-
-## 📁 Project Structure
-
-```
-bbc-news-classifier/
-│
-├── App.py                          # Main Streamlit application
-├── requirements.txt                # Python dependencies
-├── README.md                      # Project documentation
-│
-├── models/                        # Trained model files
-│   ├── stack_model_mnb_rf.pkl    # Stacking classifier
-│   ├── tfidf_vectorizer.pkl      # TF-IDF vectorizer
-│   ├── label_encoder.pkl         # Label encoder
-│   ├── test_accuracy.pkl         # Model accuracy
-│   ├── y_test.pkl                # Test labels
-│   └── y_pred.pkl                # Predictions
-│
-├── nltk_data/                     # NLTK datasets
-│   ├── corpora/
-│   ├── taggers/
-│   └── tokenizers/
-│
-├── notebooks/                     # Jupyter notebooks (if any)
-│   └── model_training.ipynb      # Model development
-│
-└── data/                          # Training data (if applicable)
-    └── bbc_news_dataset.csv
-```
 
 ## 🔬 Methodology
 
@@ -168,21 +127,6 @@ bbc-news-classifier/
 4. **Hyperparameter Tuning**: Optimize model parameters
 5. **Evaluation**: Assess performance using cross-validation
 
-## 🚀 Deployment
-
-### Local Deployment
-Follow the installation instructions above and run with Streamlit.
-
-### Cloud Deployment (Streamlit Cloud)
-1. Push your code to GitHub
-2. Connect your repository to [Streamlit Cloud](https://streamlit.io/cloud)
-3. Deploy with one click
-
-### Docker Deployment
-```dockerfile
-# Add Dockerfile for containerized deployment
-```
-
 ## 🤝 Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -197,30 +141,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- BBC for the news dataset
-- scikit-learn team for machine learning tools
-- Streamlit team for the web framework
-- NLTK team for natural language processing tools
-
 ## 📧 Contact
 
-Your Name - [your.email@example.com](mailto:your.email@example.com)
-
-Project Link: [https://github.com/yourusername/bbc-news-classifier](https://github.com/yourusername/bbc-news-classifier)
+**Hansen Vernandez**
+- LinkedIn: [Hansen Vernandez](https://www.linkedin.com/in/hansen-vernandez)
+- GitHub: [ExHansen](https://github.com/ExHansen)
+- Email: hansen.vernandez@gmail.com
 
 ---
 
 ⭐ If you found this project helpful, please give it a star!
-
-## 🔮 Future Enhancements
-
-- [ ] Add more news categories
-- [ ] Implement deep learning models (BERT, LSTM)
-- [ ] Add multilingual support
-- [ ] Real-time news feed integration
-- [ ] Batch processing capabilities
-- [ ] API endpoint for external integration
-- [ ] Model performance monitoring
-- [ ] A/B testing framework
