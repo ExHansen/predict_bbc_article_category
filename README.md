@@ -4,6 +4,8 @@
 [![Python](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+![BBC Logo](bbc-news.jpg)
+
 A machine learning web application that automatically classifies BBC news articles into categories using an ensemble stacking model with Natural Language Processing (NLP) techniques.
 
 ## 🎯 Project Overview
@@ -20,8 +22,6 @@ This project implements a text classification system that can predict the catego
 ## 🚀 Demo
 
 ![App Screenshot](image.png)
-
-*Add a screenshot of your application here*
 
 ## 🛠️ Technology Stack
 
