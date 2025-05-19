@@ -64,7 +64,7 @@ def plot_confusion_matrix(y_true, y_pred, label_encoder):
     st.pyplot(fig)
 
 # Streamlit UI
-st.title("BBC News Category Classifier (Stacked Model)")
+st.title("BBC News Category Classifier (Ensemble Stacked Model)")
 st.write("Find out the category of BBC News articles using a Ensemble Stacked Model.")
 
 if test_accuracy is not None:
@@ -74,7 +74,7 @@ if y_test is not None and y_pred is not None:
     st.write("Predicted vs Actual Data Visualization:")
     plot_confusion_matrix(y_test, y_pred, label_encoder)
 
-user_input = st.text_area("Please input BBC News (English)")
+user_input = st.text_area("Please input BBC News (in English)")
 
 if st.button("Predict"):
     if user_input:
