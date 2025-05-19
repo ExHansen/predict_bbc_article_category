@@ -9,14 +9,9 @@ from nltk.stem import WordNetLemmatizer, PorterStemmer
 from nltk.tokenize import word_tokenize
 from sklearn.metrics import confusion_matrix
 import seaborn as sns
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt  
 
-
-nltk.download('punkt')  # For tokenization
-nltk.download('stopwords')  # Optional if you're using stopwords
-nltk.download('wordnet')  # For lemmatization
-nltk.download('averaged_perceptron_tagger')  # For POS tagging
-nltk.download('omw-1.4')  # For lemmatizer's synonyms (optional but recommended)
+nltk.data.path.append('nltk_data')
 
 # Load saved components
 try:
