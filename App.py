@@ -172,41 +172,19 @@ if label_encoder is not None:
 
 # Confusion Matrix
 if y_test is not None and y_pred is not None:
-    with st.expander("View Model Performance (Confusion Matrix)"):
-        plot_confusion_matrix(y_test, y_pred, label_encoder)
+    st.subheader("View Model Performance (Confusion Matrix)")
+    plot_confusion_matrix(y_test, y_pred, label_encoder)
 
 # User input section
 st.markdown("---")
 st.subheader("Predict Article Category")
 
-# Example texts for demonstration
-example_texts = {
-    "Business": "The company's quarterly earnings exceeded expectations with a 15% increase in revenue.",
-    "Tech": "Scientists develop new quantum computing algorithm that could revolutionize data processing.",
-    "Politics": "Parliament debates new legislation on healthcare reform amid growing public support.",
-    "Sport": "The championship match ended in a thrilling overtime victory for the home team.",
-    "Entertainment": "The blockbuster movie topped box office charts for the third consecutive weekend."
-}
-
-# Dropdown for example selection
-selected_example = st.selectbox(
-    "Choose an example or write your own:",
-    ["Custom input"] + list(example_texts.keys())
-)
-
 # Text input
-if selected_example == "Custom input":
-    user_input = st.text_area(
-        "Enter BBC News article text:",
-        placeholder="Paste your news article here...",
-        height=150
-    )
-else:
-    user_input = st.text_area(
-        f"Example - {selected_example}:",
-        value=example_texts[selected_example],
-        height=150
-    )
+user_input = st.text_area(
+    "Enter BBC News article text:",
+    placeholder="Paste your news article here...",
+    height=150
+)
 
 # Prediction
 if st.button("🔍 Predict Category", type="primary"):
@@ -253,4 +231,4 @@ if st.button("🔍 Predict Category", type="primary"):
 
 # Footer
 st.markdown("---")
-st.markdown("*Built with Streamlit and scikit-learn*")
+st.markdown("*Made by Hansen Vernandez*")
